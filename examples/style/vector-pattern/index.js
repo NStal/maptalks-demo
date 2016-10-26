@@ -50,7 +50,7 @@ var marker5 = new maptalks.Marker(
 ).addTo(layer);
 
 
-var marker6= new maptalks.Marker(
+var marker6 = new maptalks.Marker(
   map.getCenter().add(0.015, 0),
   {
     'symbol' : {

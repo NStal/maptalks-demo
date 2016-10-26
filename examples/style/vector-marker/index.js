@@ -109,7 +109,7 @@ var marker5 = new maptalks.Marker(
 ).addTo(layer);
 
 
-var marker6= new maptalks.Marker(
+var marker6 = new maptalks.Marker(
   map.getCenter().add(0.005, 0),
   {
     'symbol' : {
@@ -147,7 +147,7 @@ var marker7 = new maptalks.Marker(
   }
 ).addTo(layer);
 
-var marker8= new maptalks.Marker(
+var marker8 = new maptalks.Marker(
   map.getCenter().add(0.015, 0),
   {
     'symbol' : {
@@ -166,7 +166,7 @@ var marker8= new maptalks.Marker(
   }
 ).addTo(layer);
 
-var marker8= new maptalks.Marker(
+var marker9 = new maptalks.Marker(
   map.getCenter().add(0.020, 0),
   {
     'symbol' : {

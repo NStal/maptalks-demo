@@ -66,19 +66,19 @@ var rect3 = new maptalks.Rectangle(
 ).addTo(layer);
 
 var rect4 = new maptalks.Rectangle(
-  map.getCenter().add(0.01, 0), 600, 600,
-{
-  symbol:{
-    'polygonFill' : {
-      type : 'radial',
-      places : [0.5, 0.5, 1, 1, 1, 0.1],
-      colorStops : [
+  map.getCenter().add(0.01, 0), 600, 600, {
+    symbol: {
+      'polygonFill': {
+        type: 'radial',
+        places: [0.5, 0.5, 1, 1, 1, 0.1],
+        colorStops: [
                 [0.00, '#1bbc9b'],
                 [0.55, 'rgb(135,196,240)'],
                 [1.00, '#34495e']
-      ]
-    },
-    'polygonOpacity' : 1,
-    'lineColor' : '#fff'
-  }
-}).addTo(layer);
+        ]
+      },
+      'polygonOpacity': 1,
+      'lineColor': '#fff'
+    }
+  }).addTo(layer);
+

@@ -38,15 +38,15 @@ maptalks.MyLayer = maptalks.Layer.extend({
 // deserialize the profile json to a MyLayer instance.
 maptalks.MyLayer.fromJSON = function (json) {
   return new maptalks.MyLayer(json.id, json.content, json.options);
-}
+};
 
 
 var MyLayerRenderer = maptalks.renderer.Canvas.extend({
 
   //constructor
   initialize:function (layer) {
-      //required to set layer to this.layer
-      this.layer = layer;
+    //required to set layer to this.layer
+    this.layer = layer;
   },
 
   draw: function () {
