@@ -18,15 +18,12 @@
         <!-- logo end -->
         <nav id="menu">
             <ul>
-                <li><a href="#">文档</a></li>
-                <li class="change"><a href="#">API</a>
-                    <ol>
-                        <li><a href="#">文档</a></li>
-                        <li><a href="#" class="change">示例</a></li>
-                    </ol>
-                </li>
-                <li><a href="#">插件</a></li>
-                <li><a href="#">服务与支持</a></li>
+                <li><a href="#">{{{ __ "download" }}}</a></li>
+                <li><a href="#">{{{ __ "docs" }}}</a></li>
+                <li><a href="#">{{{ __ "api" }}}</a></li>
+                <li><a href="#">{{{ __ "examples" }}}</a></li>
+                <li><a href="#">{{{ __ "plugins" }}}</a></li>
+                <li><a href="#">{{{ __ "supports" }}}</a></li>
             </ul>
 
         </nav>
@@ -41,7 +38,7 @@
         <aside id="sidebar">
             <a href="#" class="btn_Sort"></a>
             <ul class="SortList">
-                {{#list}} {{/list}}
+                {{{ list locale }}}
             </ul>
         </aside>
         <!-- sidebar end -->
@@ -52,10 +49,10 @@
 
     <footer id="footer">
         <ul class="bomnav">
-            <li> <a href="#">招聘机会</a></li>
-            <li><a href="#">免责声明</a></li>
-            <li><a href="#">联系我们</a></li>
-            <li><a href="#">投资合作</a></li>
+            <li> <a href="#">{{{ __ "recruit" }}}</a></li>
+            <li><a href="#">{{{ __ "disclaimer" }}}</a></li>
+            <li><a href="#">{{{ __ "contact_us" }}}</a></li>
+            <li><a href="#">{{{ __ "investment" }}}</a></li>
         </ul>
         <div class="copyright">
             <p>

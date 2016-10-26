@@ -2,6 +2,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var rename = require('gulp-rename');
+var i18n = require('i18n');
 var metalsmith = require('gulp-metalsmith');
 var layouts = require('metalsmith-layouts');
 var drafts = require('metalsmith-drafts');
@@ -9,7 +10,7 @@ var define = require('metalsmith-define');
 var connect = require('gulp-connect');
 var builder = require('./build/build');
 
-var handlebars = require('handlebars');
+var Handlebars = require('handlebars');
 
 var markupRegex = /([^\/^\.]*)\.html$/;
 var locale = process.env.locale || 'en';
@@ -50,6 +51,7 @@ function readExamplesInfo() {
 }
 
 function processSingleFile(file, filepath, files, metadata, isRaw) {
+  file.locale = locale;
   var basename = path.basename(filepath);
   var match = (basename !== 'list.html' && basename.match(markupRegex));
   if (!match) return;
@@ -116,7 +118,19 @@ function indentHelper(text, options) {
 }
 
 function escapeHelper(options) {
-  return handlebars.Utils.escapeExpression(options.fn(this));
+  return Handlebars.Utils.escapeExpression(options.fn(this));
+}
+
+i18n.configure({
+  locales: ['en', 'zh'],
+  directory: path.join(__dirname, 'locales'),
+  defaultLocale: locale
+});
+function i18nHelper(key, options) {
+  if (!key) {
+    return key;
+  }
+  return i18n.__(key);
 }
 
 gulp.task('examples-raw', function () {
@@ -130,7 +144,8 @@ gulp.task('examples-raw', function () {
           engine: 'handlebars',
           directory: 'layouts/raw',
           helpers: {
-            indent: indentHelper
+            indent: indentHelper,
+            __: i18nHelper
           }
         })
       ]
@@ -155,6 +170,7 @@ gulp.task('examples-demo', function () {
           partials: 'layouts/raw',
           helpers: {
             indent: indentHelper,
+            __: i18nHelper,
             escape: escapeHelper,
             list: builder.listHelper
           }
